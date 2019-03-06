@@ -4,13 +4,15 @@ const jstore = require("./jstore.js")({
 
 async function test() {
 
-    let numbers = jstore("numbers", data => {
-        console.info("NUMBERS:", data);
-    }, []);
+    let numbers = jstore("numbers", [1, 2, 3]);
 
-    setTimeout(() => {
-        numbers.save([42, 43]).catch(console.error);
-    }, 1000);
+    console.info("LOAD:", await numbers.load());
+
+    numbers.watch(async data => {
+        console.info("CHANGED:", await data.load());
+    });
+
+    numbers.save([4, 5, 6]).catch(console.error);
 
 }
 

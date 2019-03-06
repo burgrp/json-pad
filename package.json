@@ -1,15 +1,13 @@
 {
-  "name": "jstore",
+  "name": "json-pad",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "main": "json-pad.js",
+  "author": "Pavel Burgr <pb@drake.cz>",
   "license": "ISC",
   "dependencies": {
     "chokidar": "^2.1.2",
     "debug": "^4.1.1"
-  }
+  },
+  "keywords": ["json", "storage", "store", "persistence", "persist", "store", "storage", "watch"]
 }
