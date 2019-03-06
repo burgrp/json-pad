@@ -7,7 +7,7 @@ In addition to that, the library:
 - optionally watches filesystem for changes and calls you back on file change
 
 ```js
-const jsonPad = require("./json-pad.js")({
+const jsonPad = require("json-pad")({
     path: "./data"
 });
 
