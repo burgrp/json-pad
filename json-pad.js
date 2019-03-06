@@ -2,17 +2,15 @@ const error = require("debug")("app:error");
 const fs = require("fs");
 const pro = require("util").promisify;
 const chokidar = require("chokidar");
+const makeDir = require("make-dir");
 
 module.exports = options => {
 
-
     return (docName, defaultData) => {
 
-        let fileName = options.path || ".";
-        if (!fileName.endsWith("/")) {
-            fileName += "/";
-        }
-        fileName += docName + ".json";
+        let path = options.path || ".";
+
+        let fileName = path + (path.endsWith("/")? "": "/") + docName + ".json";
 
         return {
             async load() {
@@ -36,6 +34,7 @@ module.exports = options => {
             },
 
             async save(data) {
+                await makeDir(path);
                 await pro(fs.writeFile)(fileName, JSON.stringify(data, null, options.pretty? 2: undefined), "utf8");
             },
 

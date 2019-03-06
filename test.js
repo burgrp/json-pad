@@ -1,4 +1,4 @@
-const jstore = require("./jstore.js")({
+const jstore = require("./json-pad.js")({
     path: "./data"
 });
 
