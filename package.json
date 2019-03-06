@@ -9,5 +9,9 @@
     "chokidar": "^2.1.2",
     "debug": "^4.1.1"
   },
-  "keywords": ["json", "storage", "store", "persistence", "persist", "store", "storage", "watch"]
+  "keywords": ["json", "storage", "store", "persistence", "persist", "store", "storage", "watch"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burgrp/json-pad"
+  }
 }
